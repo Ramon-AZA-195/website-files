@@ -5,6 +5,7 @@
      contact Alumnus Ofek Gila at: ofek@theofekfoundation.org -->
 
 <style type="text/css">
+
 	.post-single-content {
 		width: 100%;
 	}
@@ -20,38 +21,55 @@
 	td {
 		display: inline-block;
 	}
+
 </style>
 
 <div style="text-align: center;">
+
 	<table style="border: none;">
+
 		<tr>
+
 			<td style="vertical-align: top; font-size: 25px; line-height: 35px;">
+
 				<div>
+
 					<p>
 						<strong>Date/Time</strong><br/>
 						Date(s) - #_EVENTDATES<br /><i>#_EVENTTIMES</i>
 					</p>
+
 					{has_location}
 					<p>
 						<strong>Location</strong><br/>
 						#_LOCATIONLINK
 					</p>
 					{/has_location}
+
 				</div>
+
 			</td>
+
 			<td style="float: right; width: 50%; min-width: 300px;">
 				<iframe width="100%" height="450" frameborder="0" style="border:0"
 			src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDty2Iov4_i2-GYvEG3CHte8DW44BD82bE&q=#_LOCATIONADDRESS" allowfullscreen></iframe>
 			</td>
+
 		</tr>
+
 	</table>
+
 </div>
+
 <br style="clear:both" />
+
 #_EVENTNOTES
+
 {has_bookings}
 <h3>Bookings</h3>
 #_BOOKINGFORM
 {/has_bookings}
+
 <br />
 
 <!-- WARNING: Modifying the below lines can disrupt functionality
@@ -59,10 +77,14 @@
      the code below and know some basic html/js beforehand (css
      or other styling changes are fine) -->
 <form id="user-name-form">
+
 	Please enter your full name:
 	<input type="text" name="user-name" placeholder="Ofek Gila" required>
+
 	<input type="submit" value="Save Name">
+
 </form>
+
 <br />
 
 <div id="rsvp-iframe-div"></div>
