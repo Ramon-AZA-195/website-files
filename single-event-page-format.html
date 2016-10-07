@@ -1,0 +1,162 @@
+<style>
+	.post-single-content {
+		width: 100%;
+	}
+
+	.rsvp-me-event-meta {
+		display: none;
+	}
+
+	.rsvp-me-event-form {
+		margin-left: 25%;
+	}
+
+	td {
+		display: inline-block;
+	}
+</style>
+
+<div style="text-align: center;">
+	<table style="border: none;">
+		<tr>
+			<td style="vertical-align: top; font-size: 25px; line-height: 35px;">
+				<div>
+					<p>
+						<strong>Date/Time</strong><br/>
+						Date(s) - #_EVENTDATES<br /><i>#_EVENTTIMES</i>
+					</p>
+					{has_location}
+					<p>
+						<strong>Location</strong><br/>
+						#_LOCATIONLINK
+					</p>
+					{/has_location}
+				</div>
+			</td>
+			<td style="float: right; width: 50%; min-width: 300px;">
+				<iframe width="100%" height="450" frameborder="0" style="border:0"
+			src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDty2Iov4_i2-GYvEG3CHte8DW44BD82bE&q=#_LOCATIONADDRESS" allowfullscreen></iframe>
+			</td>
+		</tr>
+	</table>
+</div>
+<br style="clear:both" />
+#_EVENTNOTES
+{has_bookings}
+<h3>Bookings</h3>
+#_BOOKINGFORM
+{/has_bookings}
+<br />
+
+<!-- WARNING: Modifying the below lines can disrupt functionality
+     if you aren't sure what you are doing! Be sure to understand
+     the code below and know some basic html/js beforehand (css
+     or other styling changes are fine) -->
+<form id="user-name-form">
+	Please enter your full name:
+	<input type="text" name="user-name" placeholder="Ofek Gila" required>
+	<input type="submit" value="Save Name">
+</form>
+<br />
+
+<div id="rsvp-iframe-div"></div>
+
+<script type="text/javascript">
+	/**
+	 * This script currently is meant to do the following:
+	 *  1. Store and retrieve Aleph name from the user-name-form
+	 *  2. Generate and insert the Google Forms iframe with
+	 *     prefilled Aleph name if known.
+	 *
+	 * If you decide to modify this program, hold yourself up to
+	 * the highest coding standards, and be sure to document your
+	 * code well. If you change the intent, modify the above list
+	 * of intents. If you have any questions or concerns, be sure
+	 * to send an email to: ofek@theofekfoundation.org
+	 */
+
+	/**
+	 * String representation of prefilled google forms.
+	 * For any of you wishing to modify the form, add
+	 * prefilled fields, or whatever, try to understand
+	 * from here: https://support.google.com/docs/answer/160000?hl=en
+	 * @type {String}
+	 */
+	const GOOGLE_FORMS_IFRAME_NAME = '<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdfVpa95vWC1KXmz69nvqLZEyXy0nYabjGlAY1sVk_lJX9VbQ/viewform?entry.2093143150=#_EVENTNAME&entry.1760334801={0}&entry.196086481/viewform?embedded=true" width="100%" height="1100px" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>';
+
+	window.onload = function() {
+		let name = getStoredName() || "",
+			userNameForm = document.getElementById("user-name-form");
+		createIframe(name);
+		userNameForm.addEventListener("submit", submitUserNameForm);
+	}
+
+	/**
+	 * Submits
+	 * @param  {Event} e [description]
+	 * @return {[type]}   [description]
+	 */
+	function submitUserNameForm(e) {
+		e.preventDefault();
+		let name = document.querySelector("input[name=user-name]").value;
+		storeName(name);
+		createIframe(name);
+		document.querySelector("input[name=user-name]").value = "";
+	}
+
+	function createIframe(name) {
+		let iframeDiv = document.getElementById("rsvp-iframe-div"),
+			iframeContent = GOOGLE_FORMS_IFRAME_NAME.format(name);
+		iframeDiv.innerHTML = iframeContent;
+	}
+
+	function storeName(name) {
+		storeItem('name', name);
+	}
+
+	function getStoredName() {
+		return getStoredItem('name');
+	}
+
+	/*
+	 * Below lie helper functions that I urge you to reuse!
+	 */
+
+	function storeItem(key, value) {
+		localStorage.setItem(key, value);
+		setCookie(key, value, 120 * 365);
+	}
+
+	function getStoredItem(key) {
+		return localStorage.getItem(key) ||
+			getCookie(key);
+	}
+
+	function setCookie(cname, cvalue, exdays) {
+		let d = new Date();
+		d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+		let expires = "expires="+ d.toUTCString();
+		document.cookie = cname + "=" + cvalue + "; " + expires;
+	}
+
+	function getCookie(cname) {
+		let name = cname + "=",
+			ca = document.cookie.split(';');
+		for(let i = 0; i < ca.length; i++) {
+			let c = ca[i];
+			while (c.charAt(0) === ' ')
+				c = c.substring(1);
+			if (c.indexOf(name) === 0)
+				return c.substring(name.length,c.length);
+		}
+		return "";
+	}
+
+	if (!String.prototype.format)
+		String.prototype.format = function() {
+			let args = arguments;
+			return this.replace(/{(\d+)}/g, function(match, number) {
+				return typeof args[number] != 'undefined' ? args[number] : match;
+			});
+		};
+</script>
