@@ -121,7 +121,7 @@
 	 */
 	window.onload = function() {
 		let name = getStoredName() || '',
-			userNameForm = document.getElementById("user-name-form");
+		    userNameForm = document.getElementById("user-name-form");
 		generateForm(name);
 		userNameForm.addEventListener('submit', submitUserNameForm);
 	}
@@ -146,7 +146,7 @@
 	 */
 	function generateForm(name) {
 		let iframeDiv = document.getElementById('rsvp-iframe-div'),
-			iframeContent = GOOGLE_FORMS_IFRAME_NAME.format(name);
+		    iframeContent = GOOGLE_FORMS_IFRAME_NAME.format(name);
 		iframeDiv.innerHTML = iframeContent;
 	}
 
@@ -247,7 +247,7 @@
 	 */
 	function getCookie(cname) {
 		let name = cname + "=",
-			ca = document.cookie.split(';');
+		    ca = document.cookie.split(';');
 		for(let i = 0; i < ca.length; i++) {
 			let c = ca[i];
 			while (c.charAt(0) === ' ')
