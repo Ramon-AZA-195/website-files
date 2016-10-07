@@ -1,2 +1,2 @@
 # website-files
-Random files for the ramonaza.org weebsite
+Random files for the ramonaza.org website

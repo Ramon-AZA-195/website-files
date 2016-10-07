@@ -118,7 +118,6 @@
 	 * Called on page load.
 	 * Creates Google Form with name prefilled
 	 * if name found.
-	 * @return {[type]} [description]
 	 */
 	window.onload = function() {
 		let name = getStoredName() || '',
@@ -143,7 +142,7 @@
 
 	/**
 	 * Generates the Google Form with prefilled name.
-	 * @param  {String} name The full name of the user.
+	 * @param  {String} name the full name of the user
 	 */
 	function generateForm(name) {
 		let iframeDiv = document.getElementById('rsvp-iframe-div'),
@@ -181,6 +180,7 @@
 	 * Stores a key, item value pair as both in the localStorage
 	 * and as a cookie (cookies for mobile or whatnot).
 	 * for example:
+	 *
 	 * storeItem('tester', 123);
 	 * can be retrieved by:
 	 * getItem('tester');
