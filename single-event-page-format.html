@@ -1,3 +1,9 @@
+<!-- Don't edit this file directly!!!
+     Make changes on Github first!
+     https://github.com/ramonaza/website-files/blob/master/single-event-page-format.html
+     If you have any questions or concerns, feel free to
+     contact Alumnus Ofek Gila at: ofek@theofekfoundation.org -->
+
 <style>
 	.post-single-content {
 		width: 100%;
@@ -76,44 +82,71 @@
 	 */
 
 	/**
-	 * String representation of prefilled google forms.
+	 * String representation of prefilled Google Forms.
 	 * For any of you wishing to modify the form, add
 	 * prefilled fields, or whatever, try to understand
 	 * from here: https://support.google.com/docs/answer/160000?hl=en
+	 * Note: this string should be formatted before usage, note the
+	 * {0} in it, and look here for reference: http://stackoverflow.com/a/4673436/2632659
 	 * @type {String}
 	 */
 	const GOOGLE_FORMS_IFRAME_NAME = '<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdfVpa95vWC1KXmz69nvqLZEyXy0nYabjGlAY1sVk_lJX9VbQ/viewform?entry.2093143150=#_EVENTNAME&entry.1760334801={0}&entry.196086481/viewform?embedded=true" width="100%" height="1100px" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>';
 
+	/**
+	 * Called on page load.
+	 * Creates Google Form with name prefilled
+	 * if name found.
+	 * @return {[type]} [description]
+	 */
 	window.onload = function() {
-		let name = getStoredName() || "",
+		let name = getStoredName() || '',
 			userNameForm = document.getElementById("user-name-form");
-		createIframe(name);
-		userNameForm.addEventListener("submit", submitUserNameForm);
+		generateForm(name);
+		userNameForm.addEventListener('submit', submitUserNameForm);
 	}
 
 	/**
-	 * Submits
-	 * @param  {Event} e [description]
-	 * @return {[type]}   [description]
+	 * Called when user-name-form is submitted.
+	 * Stores the name and generates a new Google Form
+	 * with the new name prefilled.
+	 * @param  {Event} e Submission event
 	 */
 	function submitUserNameForm(e) {
 		e.preventDefault();
 		let name = document.querySelector("input[name=user-name]").value;
 		storeName(name);
-		createIframe(name);
-		document.querySelector("input[name=user-name]").value = "";
+		generateForm(name);
+		document.querySelector("input[name=user-name]").value = '';
 	}
 
-	function createIframe(name) {
-		let iframeDiv = document.getElementById("rsvp-iframe-div"),
+	/**
+	 * Generates the Google Form with prefilled name.
+	 * @param  {String} name The full name of the user.
+	 */
+	function generateForm(name) {
+		let iframeDiv = document.getElementById('rsvp-iframe-div'),
 			iframeContent = GOOGLE_FORMS_IFRAME_NAME.format(name);
 		iframeDiv.innerHTML = iframeContent;
 	}
 
+	/**
+	 * Stores the name using the storeItem function.
+	 * I understand that this function is unnecessary,
+	 * but I leave it as an example of how to store
+	 * items. Future items should be stored simply using
+	 * storeItem(key, value);
+	 * See the storeItem function for more information
+	 * @param  {String} name String name to be stored.
+	 */
 	function storeName(name) {
 		storeItem('name', name);
 	}
 
+	/**
+	 * Retrieves the stored name. This function is here for
+	 * a similar reason to the last one.
+	 * @return {String} The stored name
+	 */
 	function getStoredName() {
 		return getStoredItem('name');
 	}
@@ -122,16 +155,62 @@
 	 * Below lie helper functions that I urge you to reuse!
 	 */
 
+	/**
+	 * Stores a key, item value pair as both in the localStorage
+	 * and as a cookie (cookies for mobile or whatnot).
+	 * for example:
+	 * storeItem('tester', 123);
+	 * can be retrieved by:
+	 * getItem('tester');
+	 *
+	 * Note: Stores the items as JSON automatically, meaning
+	 * that they will maintain their data types (including
+	 * dictionaries!)
+	 * @param  {String} key   Key to store value as
+	 * @param  {any}    value Value to store for key
+	 */
 	function storeItem(key, value) {
-		localStorage.setItem(key, value);
-		setCookie(key, value, 120 * 365);
+		let jsonStringValue = JSON.stringify(value);
+		localStorage.setItem(key, jsonStringValue);
+		setCookie(key, jsonStringValue, 120 * 365);
 	}
 
+	/**
+	 * Retrieves stored value from key, checking both
+	 * the localStorage and cookies. Attempts to parse
+	 * as JSON, but returns normal value if cannot parse.
+	 *
+	 * See above (storeItem) function for usage help and
+	 * more information.
+	 *
+	 * @param  {String} key Key to find value for
+	 * @return {any}        Value retrieved from key
+	 */
 	function getStoredItem(key) {
-		return localStorage.getItem(key) ||
-			getCookie(key);
+		let item = localStorage.getItem(key) || getCookie(key);
+		if (item === null)
+			return null;
+		try {
+			return JSON.parse(item);
+		}	catch (error) {
+			return item;
+		}
 	}
 
+	/*
+	 * The below functions weren't made by me, but feel
+	 * free to use them nonetheless. I wouldn't change
+	 * them myself unless you are confident you know
+	 * exactly what you are doing.
+	 */
+
+	/**
+	 * Sets a cookie with a specific name, value, and
+	 * expiration time in days.
+	 * @param {String} cname  cookie name
+	 * @param {String} cvalue cookie value
+	 * @param {Number} exdays days until expiration
+	 */
 	function setCookie(cname, cvalue, exdays) {
 		let d = new Date();
 		d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
@@ -139,6 +218,11 @@
 		document.cookie = cname + "=" + cvalue + "; " + expires;
 	}
 
+	/**
+	 * Gets a cookie with a specific name.
+	 * @param  {String} cname cookie name
+	 * @return {String}       cookie value
+	 */
 	function getCookie(cname) {
 		let name = cname + "=",
 			ca = document.cookie.split(';');
@@ -149,9 +233,19 @@
 			if (c.indexOf(name) === 0)
 				return c.substring(name.length,c.length);
 		}
-		return "";
+		return null;
 	}
 
+	/**
+	 * Gives the String class a format function, used in
+	 * generateForm. As an example:
+	 *
+	 * "{0} is nice to {1}. Always.".format("Ofek", "Ori")
+	 * becomes: "Ofek is nice to Ori. Always"
+	 *
+	 * See: http://stackoverflow.com/a/4673436/2632659
+	 * for more information.
+	 */
 	if (!String.prototype.format)
 		String.prototype.format = function() {
 			let args = arguments;
