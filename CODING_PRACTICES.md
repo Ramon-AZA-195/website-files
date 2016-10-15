@@ -108,7 +108,11 @@ I know some people also really care about the ordering of the style attributes w
 
 As a fellow JavaScript enthusiast myself, I know how hard it is to understand old code.
 
-Naming is snakeCase in general, constants (const) should be written in uppercase characters separated by underscores (GOOGLE_FORMS_IFRAME_NAME) before all else. Use 'let' instead of 'var', learn the difference [here][let, const, and var].
+Naming is snakeCase in general, constants (const) should be written in uppercase characters separated by underscores (GOOGLE_FORMS_IFRAME_NAME) before all else.
+
+Use 'let' instead of 'var', learn the difference [here][let, const, and var].
+
+Use === instead of == when possible (if you don't know the difference, read [this][=== vs ==])
 
 For braces, follow [Google's braces format][google brace format]. Their formatting guide is good in general, it's a 10-20 minute read for when you get the chance.
 
@@ -190,5 +194,6 @@ For more information or comments, email me at: ofek@theofekfoundation.org
 [tabs and spaces article]:http://lea.verou.me/2012/01/why-tabs-are-clearly-superior/ "tabs and spaces article"
 [codecademy html and css]:https://www.codecademy.com/courses/web-beginner-en-HZA3b/0/1?curriculum_id=50579fb998b470000202dc8b "codecademy html and css lesson"
 [let, const, and var]:https://medium.com/javascript-scene/javascript-es6-var-let-or-const-ba58b8dcde75#.v34hkx1q0 "let vs const vs var"
+[=== vs ==]:https://appendto.com/2016/02/vs-javascript-abstract-vs-strict-equality/ "=== vs =="
 [google brace format]:https://google.github.io/styleguide/javaguide.html#s4.1-braces "google brace format"
 [jsdoc comments]:http://usejsdoc.org/about-getting-started.html "jsdoc comments"
