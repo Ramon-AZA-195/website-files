@@ -1,8 +1,8 @@
 <!-- Don't edit this file without reading!!!
-     Make changes on Github first!
-     https://github.com/ramonaza/website-files/blob/master/default-event-page-format.html
-     If you have any questions or concerns, feel free to
-     contact Alumnus Ofek Gila at: ofek@theofekfoundation.org -->
+	 Make changes on Github first!
+	 https://github.com/ramonaza/website-files/blob/master/default-event-page-format.html
+	 If you have any questions or concerns, feel free to
+	 contact Alumnus Ofek Gila at: ofek@theofekfoundation.org -->
 
 <tr>
 
@@ -17,6 +17,10 @@
 
 		<div class="event-location">
 			<span class="desc-name">Meet:</span> #_LOCATIONNAME (#_LOCATIONADDRESS) at #_EVENTTIMES
+		</div>
+
+		<div class="event-house house-name-#_ATT{house}">
+			<span class="desc-name">House:</span> #_ATT{house}
 		</div>
 
 		<div class="event-bring">
@@ -40,3 +44,28 @@
 	<br/>
 
 </tr>
+
+<script type="text/javascript">
+
+	window.onload = function () {
+		let emptyHouseDivs = document.getElementsByClassName('house-name-');
+		for (let i = 0; i < emptyHouseDivs.length; i++)
+			emptyHouseDivs[i].remove();
+	}
+
+	/**
+	 * Found online to delete elements
+	 * http://stackoverflow.com/a/18120786/2632659
+	 */
+	Element.prototype.remove = function() {
+		this.parentElement.removeChild(this);
+	}
+
+	NodeList.prototype.remove = HTMLCollection.prototype.remove = function() {
+		for(var i = this.length - 1; i >= 0; i--) {
+			if(this[i] && this[i].parentElement) {
+				this[i].parentElement.removeChild(this[i]);
+			}
+		}
+	}
+</script>
