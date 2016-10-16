@@ -6,8 +6,18 @@
 
 <style type="text/css">
 
+	.single-title {
+		color: #2182ab;
+		font-family: Impact, Charcoal, sans-serif;
+		font-size: 25px;
+	}
+
 	.post-single-content {
 		width: 100%;
+	}
+
+	.event-details-div {
+		color: #0f389c;
 	}
 
 	.rsvp-me-event-meta {
@@ -22,6 +32,10 @@
 		display: inline-block;
 	}
 
+	.house-name- {
+		display: none;
+	}
+
 </style>
 
 <div style="text-align: center;">
@@ -32,7 +46,7 @@
 
 			<td style="vertical-align: top; font-size: 25px; line-height: 35px; max-width: 40%;">
 
-				<div>
+				<div class="event-details-div">
 
 					<p>
 						<strong>Date/Time</strong><br/>
@@ -131,12 +145,7 @@
 	 */
 	window.onload = function() {
 		let name = getStoredName() || '',
-		    userNameForm = document.getElementById("user-name-form"),
-		    emptyHouseDivs = document.getElementsByClassName('house-name-');
-
-		/* remove empty houses */
-		for (let i = 0; i < emptyHouseDivs.length; i++)
-			emptyHouseDivs[i].remove();
+		    userNameForm = document.getElementById("user-name-form");
 
 		generateForm(name);
 		userNameForm.addEventListener('submit', submitUserNameForm);

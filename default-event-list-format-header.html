@@ -52,4 +52,44 @@
 		margin-right: auto;
 	}
 
+	.css-events-list .house-name- {
+		display: none;
+	}
+
+	.title {
+		display: none;
+	}
+
 </style>
+
+
+<script type="text/javascript">
+
+	window.onload = function () {
+		let images = document.getElementsByClassName('event-image');
+
+		for (let i = 0; i < images.length; i++)
+			formatImage(images[i]);
+	}
+
+	function formatImage(image) {
+		if (image.width >= image.height)
+			image.style.width = "50%";
+	}
+
+	/**
+	 * Found online to delete elements
+	 * http://stackoverflow.com/a/18120786/2632659
+	 */
+	Element.prototype.remove = function() {
+		this.parentElement.removeChild(this);
+	}
+
+	NodeList.prototype.remove = HTMLCollection.prototype.remove = function() {
+		for(var i = this.length - 1; i >= 0; i--) {
+			if(this[i] && this[i].parentElement) {
+				this[i].parentElement.removeChild(this[i]);
+			}
+		}
+	}
+</script>
