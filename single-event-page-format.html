@@ -120,28 +120,20 @@
 	 *  2. Generate and insert the Google Forms iframe with
 	 *     prefilled Aleph name if known.
 	 *
-	 * If you decide to modify this program, hold yourself up to
-	 * the highest coding standards, and be sure to document your
-	 * code well. If you change the intent, modify the above list
-	 * of intents. If you have any questions or concerns, be sure
-	 * to send an email to: ofek@theofekfoundation.org
+	 * If you decide to modify this program, hold yourself up to the highest coding standards, and be sure to document your code well. If you change the intent, modify the above list of intents. If you have any questions or concerns, be sure to send an email to: ofek@theofekfoundation.org
 	 */
 
 	/**
 	 * String representation of prefilled Google Forms.
-	 * For any of you wishing to modify the form, add
-	 * prefilled fields, or whatever, try to understand
-	 * from here: https://support.google.com/docs/answer/160000?hl=en
-	 * Note: this string should be formatted before usage, note the
-	 * {0} in it, and look here for reference: http://stackoverflow.com/a/4673436/2632659
+	 * For any of you wishing to modify the form, add prefilled fields, or whatever, try to understand from here: https://support.google.com/docs/answer/160000?hl=en
+	 * Note: this string should be formatted before usage, note the {0} in it, and look here for reference: http://stackoverflow.com/a/4673436/2632659
 	 * @type {string}
 	 */
 	const GOOGLE_FORMS_IFRAME_NAME = '<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdfVpa95vWC1KXmz69nvqLZEyXy0nYabjGlAY1sVk_lJX9VbQ/viewform?entry.2093143150=#_EVENTNAME&entry.1760334801={0}&entry.196086481/viewform?embedded=true" width="100%" height="1100px" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>';
 
 	/**
 	 * Called on page load.
-	 * Creates Google Form with name prefilled
-	 * if name found.
+	 * Creates Google Form with name prefilled if name found.
 	 */
 	window.onload = function() {
 		let name = getStoredName() || '',
@@ -153,8 +145,7 @@
 
 	/**
 	 * Called when user-name-form is submitted.
-	 * Stores the name and generates a new Google Form
-	 * with the new name prefilled.
+	 * Stores the name and generates a new Google Form with the new name prefilled.
 	 * @param  {Event} e Submission event
 	 */
 	function submitUserNameForm(e) {
@@ -177,10 +168,7 @@
 
 	/**
 	 * Stores the name using the storeItem function.
-	 * I understand that this function is unnecessary,
-	 * but I leave it as an example of how to store
-	 * items. Future items should be stored simply using
-	 * storeItem(key, value);
+	 * I understand that this function is unnecessary, but I leave it as an example of how to store items. Future items should be stored simply using storeItem(key, value);
 	 * See the storeItem function for more information
 	 * @param  {string} name String name to be stored.
 	 */
@@ -189,8 +177,7 @@
 	}
 
 	/**
-	 * Retrieves the stored name. This function is here for
-	 * a similar reason to the last one.
+	 * Retrieves the stored name. This function is here for a similar reason to the last one.
 	 * @return {string} The stored name
 	 */
 	function getStoredName() {
@@ -202,17 +189,14 @@
 	 */
 
 	/**
-	 * Stores a key, item value pair as both in the localStorage
-	 * and as a cookie (cookies for mobile or whatnot).
+	 * Stores a key, item value pair as both in the localStorage and as a cookie (cookies for mobile or whatnot).
 	 * for example:
 	 *
 	 * storeItem('tester', 123);
 	 * can be retrieved by:
 	 * getItem('tester');
 	 *
-	 * Note: Stores the items as JSON automatically, meaning
-	 * that they will maintain their data types (including
-	 * dictionaries!)
+	 * Note: Stores the items as JSON automatically, meaning that they will maintain their data types (including dictionaries!)
 	 * @param  {string} key   Key to store value as
 	 * @param  {*}      value Value to store for key
 	 */
@@ -223,12 +207,9 @@
 	}
 
 	/**
-	 * Retrieves stored value from key, checking both
-	 * the localStorage and cookies. Attempts to parse
-	 * as JSON, but returns normal value if cannot parse.
+	 * Retrieves stored value from key, checking both the localStorage and cookies. Attempts to parse as JSON, but returns normal value if cannot parse.
 	 *
-	 * See above (storeItem) function for usage help and
-	 * more information.
+	 * See above (storeItem) function for usage help and more information.
 	 *
 	 * @param  {string} key Key to find value for
 	 * @return {*}          Value retrieved from key
@@ -245,15 +226,11 @@
 	}
 
 	/*
-	 * The below functions weren't made by me, but feel
-	 * free to use them nonetheless. I wouldn't change
-	 * them myself unless you are confident you know
-	 * exactly what you are doing.
+	 * The below functions weren't made by me, but feel free to use them nonetheless. I wouldn't change them myself unless you are confident you know exactly what you are doing.
 	 */
 
 	/**
-	 * Sets a cookie with a specific name, value, and
-	 * expiration time in days.
+	 * Sets a cookie with a specific name, value, and expiration time in days.
 	 * @param {string} cname  cookie name
 	 * @param {string} cvalue cookie value
 	 * @param {Number} exdays days until expiration
@@ -284,14 +261,11 @@
 	}
 
 	/**
-	 * Gives the String class a format function, used in
-	 * generateForm. As an example:
+	 * Gives the String class a format function, used in generateForm. As an example:
 	 *
-	 * "{0} is nice to {1}. Always.".format("Ofek", "Ori")
-	 * becomes: "Ofek is nice to Ori. Always"
+	 * "{0} is nice to {1}. Always.".format("Ofek", "Ori") becomes: "Ofek is nice to Ori. Always"
 	 *
-	 * See: http://stackoverflow.com/a/4673436/2632659
-	 * for more information.
+	 * See: http://stackoverflow.com/a/4673436/2632659 for more information.
 	 */
 	if (!String.prototype.format)
 		String.prototype.format = function() {
