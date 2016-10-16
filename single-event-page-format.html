@@ -46,6 +46,16 @@
 					</p>
 					{/has_location}
 
+					<p class="house-name-#_ATT{house}">
+						<strong>House</strong><br/>
+						#_ATT{house}
+					</p>
+
+					<p>
+						<strong>Bring</strong><br/>
+						#_ATT{bring}
+					</p>
+
 				</div>
 
 			</td>
@@ -121,7 +131,13 @@
 	 */
 	window.onload = function() {
 		let name = getStoredName() || '',
-		    userNameForm = document.getElementById("user-name-form");
+		    userNameForm = document.getElementById("user-name-form"),
+		    emptyHouseDivs = document.getElementsByClassName('house-name-');
+
+		/* remove empty houses */
+		for (let i = 0; i < emptyHouseDivs.length; i++)
+			emptyHouseDivs[i].remove();
+
 		generateForm(name);
 		userNameForm.addEventListener('submit', submitUserNameForm);
 	}
@@ -275,4 +291,21 @@
 				return typeof args[number] != 'undefined' ? args[number] : match;
 			});
 		};
+
+	/**
+	 * Found online to delete elements
+	 * http://stackoverflow.com/a/18120786/2632659
+	 */
+	Element.prototype.remove = function() {
+		this.parentElement.removeChild(this);
+	}
+
+	NodeList.prototype.remove = HTMLCollection.prototype.remove = function() {
+		for(var i = this.length - 1; i >= 0; i--) {
+			if(this[i] && this[i].parentElement) {
+				this[i].parentElement.removeChild(this[i]);
+			}
+		}
+	}
+
 </script>
