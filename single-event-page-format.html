@@ -32,7 +32,7 @@
 		display: inline-block;
 	}
 
-	.house-name- {
+	.name- {
 		display: none;
 	}
 
@@ -60,7 +60,12 @@
 					</p>
 					{/has_location}
 
-					<p class="house-name-#_ATT{house}">
+					<p class="name-#_ATT{food-loc}">
+						<strong>Food</strong><br/>
+						#_ATT{food-loc}
+					</p>
+
+					<p class="name-#_ATT{house}">
 						<strong>House</strong><br/>
 						#_ATT{house}
 					</p>
