@@ -144,6 +144,7 @@
 		let name = getStoredName() || '',
 		    userNameForm = document.getElementById("user-name-form");
 
+		document.querySelector('input[name=user-name]').value = name;
 		generateForm(name);
 		userNameForm.addEventListener('submit', submitUserNameForm);
 	}
