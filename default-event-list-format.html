@@ -39,8 +39,21 @@
 			<span class="desc-name">Planned by:</span> #_ATT{planner}
 		</div>
 
-		<div class="event-rsvp">
-			Don't forget to <a href="#_EVENTURL" target="_blank">RSVP</a>!
+		<!-- The following line is necessary for the add-to-calendar date format -->
+		<div style="display: none;">#H#i #@H#@i</div>
+
+		<div class="add-to-calendar">
+			<a href="http://www.google.com/calendar/event?
+			action=TEMPLATE
+			&text=#_EVENTNAME
+			&dates=#_{Ymd}T#H#i00Z/#@_{Ymd}T#@H#@i00Z
+			&ctz=GMT-14:00
+			&details=#_ATT{desc}
+			&location=#_LOCATIONADDRESS
+			&trp=false
+			&sprop=
+			&sprop=name:"
+			target="_blank" rel="nofollow">Add to my calendar</a>
 		</div>
 
 	</div>
