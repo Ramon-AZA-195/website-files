@@ -1,0 +1,320 @@
+<!-- Don't edit this file without reading!!!
+     Make changes on Github first, then copy paste to wordpress!
+     https://github.com/ramonaza/website-files/blob/master/website-guide.html
+     If you have any questions or concerns, feel free to
+     contact Alumnus Ofek Gila at: ofek@theofekfoundation.org -->
+
+<div class="ramon-style no-display">
+	<h1>Please edit this page in Text mode (not Visual), and read the top comment!</h1>
+</div>
+
+<style type="text/css">
+
+	p {
+		margin-left: 20px;
+	}
+
+	/*
+		Taken from: https://www.tipsandtricks-hq.com/simple-table-of-contents-toc-using-pure-html-and-css-code-9217
+	 */
+
+	#toc-container {
+		background: #f9f9f9 none repeat scroll 0 0;
+		border: 1px solid #aaa;
+		display: table;
+		font-size: 95%;
+		margin-bottom: 1em;
+		padding: 20px;
+		width: auto;
+	}
+
+	.toc-title {
+		font-weight: 700;
+		text-align: center;
+	}
+
+	#toc-container li, #toc-container ul, #toc-container ul li{
+		list-style: outside none none !important;
+	}
+
+	.toc-list {
+		padding-left: 10;
+		padding-right: 10;
+	}
+
+	/**
+		Taken from: https://www.w3schools.com/css/tryit.asp?filename=trycss_image_gallery_responsive
+	 */
+
+	div.gallery {
+		border: 1px solid #ccc;
+	}
+
+	div.gallery:hover {
+		border: 1px solid #777;
+	}
+
+	div.gallery img {
+		width: 100%;
+		height: auto;
+	}
+
+	div.desc {
+		padding: 15px;
+		text-align: center;
+	}
+
+	.responsive * {
+		box-sizing: border-box;
+	}
+
+	.responsive {
+		padding: 0 6px;
+		padding-bottom: 12px;
+		float: left;
+	}
+
+	.responsive.r4 {
+		width: 24.99999%;
+	}
+
+	.responsive.r3 {
+		width: 30%;
+	}
+
+	.responsive.r2 {
+		width: 47%;
+	}
+
+	@media only screen and (max-width: 700px){
+		.responsive.r4 {
+			width: 49.99999%;
+			margin: 6px 0;
+		}
+	}
+
+	@media only screen and (max-width: 500px){
+		.responsive.r2 {
+			width: 100%;
+		}
+
+		.responsive.r3 {
+			width: 100%;
+		}
+	}
+
+	.clearfix:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+
+</style>
+
+<h1>A complete (WIP) guide to the website</h1>
+
+
+<p>
+	Welcome to the complete guide to the website. This page will give you an accurate insight into the eyes of a Aleph Machshev, or anyone who needs to modify the website, be it Board Pages, or modifying Events as a S'gan.
+</p>
+
+<br />
+
+<div id="toc-container">
+
+	<p class="toc-title">Contents</p>
+
+
+	<ul class="toc-list"">
+
+		<li><a href="#first-things-first">First Things First</a></li>
+
+		<li>
+
+			<a href="#aleph-machshev">Aleph Machshev</a>
+
+			<ul>
+				<li><a href="#getting-started">Getting Started</a></li>
+				<li><a href="#adding-users">Adding Users</a></li>
+			</ul>
+
+		</li>
+
+		<li>
+
+			<a href="#aleph-sgan">Aleph S'gan</a>
+
+			<ul>
+				<li><a href="#First_Sub_Point_1">1.1 First Sub Point 1</a></li>
+				<li><a href="#First_Sub_Point_2">1.2 First Sub Point 2</a></li>
+			</ul>
+
+		</li>
+
+		<li><a href="#board-pages">Board Pages</a></li>
+
+	</ul>
+
+</div>
+
+<br /><br />
+
+<h1 id="first-things-first">First Things First</h1>
+
+<p>
+	You're probably going to want to know how to log into the wordpress editor. This is pretty easy, just head over to the <a href="http://ramonaza.org/wp-login.php" target="_blank">login page</a>.
+</p>
+
+<p>
+	Unless you're the Aleph Machshev, you are going to be using a generic username following the format: aleph_[position name]. For example, the Shaliach's username is "aleph_shaliach".
+</p>
+
+<p>
+	For your password, you will either need to contact the previous holder of the position, or the Machshev. The Machshev will either know your password, or will reset your password and tell you your new one.
+</p>
+
+<p>
+	Once you're in, you'll be directed straight to the dashboard (see below). I'd recommend heading over to the "Profile" tab and personalizing your color scheme and other stuff.
+</p>
+
+<p>
+	If you just came here to update your board page you can <a href="#board-pages">skip straight there</a>.
+</p>
+
+<div class="responsive r3">
+	<div class="gallery">
+
+		<a target="_blank" href="http://ramonaza.org/wp-content/uploads/2017/11/Login.png">
+			<img src="http://ramonaza.org/wp-content/uploads/2017/11/Login.png" alt="Website Login" width="576" height="300">
+		</a>
+
+		<div class="desc">The login page for the website</div>
+
+	</div>
+</div>
+
+<div class="responsive r3">
+	<div class="gallery">
+
+		<a target="_blank" href="http://ramonaza.org/wp-content/uploads/2017/11/Dashboard.png">
+			<img src="http://ramonaza.org/wp-content/uploads/2017/11/Dashboard.png" alt="Website Dashboard" width="576" height="300">
+		</a>
+
+		<div class="desc">The dashboard of the website</div>
+
+	</div>
+</div>
+
+<div class="responsive r3">
+	<div class="gallery">
+
+		<a target="_blank" href="http://ramonaza.org/wp-content/uploads/2017/11/Profile.png">
+			<img src="http://ramonaza.org/wp-content/uploads/2017/11/Profile.png" alt="User Profile" width="576" height="300">
+		</a>
+
+		<div class="desc">Your Profile page</div>
+
+	</div>
+</div>
+
+<div class="clearfix"></div>
+
+<br />
+
+<h1 id="aleph-machshev">Aleph Machshev</h1>
+
+<h2 id="getting-started">Getting Started</h2>
+
+<p>
+	The first thing an Aleph Machshev needs to do is to get his account. In order to do this, you need to chat with a previous Machshev (preferably the last one). Be friendly to them and kiss their asses, because no matter how much content is in this guide, the previous Machshev (and Google) will be your greatest assets.
+</p>
+
+<p>
+	Once you get your account, you need to log in (this is covered in the <a href="#first-things-first">first things first section</a>.).
+</p>
+
+<p>
+	The first image down below shows you a screen that should look similar to the first screen you see. The colors may be different, but you should be able to see a similar amount of items in the left navigation bar. If you see significantly fewer items, make sure the previous Machshev made you an Administrator.
+</p>
+
+<p>
+	If you want to change the way things look for you, you can head to your profile, which you get to by going to Users -> Your Profile.
+</p>
+
+<p>
+	At this point, I'd recommend looking around at all the tools, plugins, pages, etc, and try to get a feel of things yourself for a few minutes. Don't make changes in places you aren't certain about, because the website is kinda funky and can completely crash if you make changes in a sketchy area. (For the most part, avoid changing php templates unless you are 100% sure you know what you're doing.)
+</p>
+
+<div class="responsive r2">
+	<div class="gallery">
+
+		<a target="_blank" href="http://ramonaza.org/wp-content/uploads/2017/11/AdminDashboard.png">
+			<img src="http://ramonaza.org/wp-content/uploads/2017/11/AdminDashboard.png" alt="Admin Dashboard" width="576" height="300">
+		</a>
+
+		<div class="desc">Your Dashboard</div>
+
+	</div>
+</div>
+
+<div class="responsive r2">
+	<div class="gallery">
+
+		<a target="_blank" href="http://ramonaza.org/wp-content/uploads/2017/11/DontEdit.png">
+			<img src="http://ramonaza.org/wp-content/uploads/2017/11/DontEdit.png" alt="Don't Edit" width="576" height="300">
+		</a>
+
+		<div class="desc">An example of something you shouldn't touch</div>
+
+	</div>
+</div>
+
+<div class="clearfix"></div>
+
+
+<h2 id="adding-users">Adding Users</h2>
+
+<p>
+	If you just finished your term as Aleph Machshev, and the new Machshev is expecting his own account so that he can play with the website himself, you're going to want to know how to do that.
+</p>
+
+<p>
+	This is pretty easy though, you just need to head over to Users -> Add New, give them a username, some email account (they can change it themselves later), etc. <b>Important: </b>click on "Show Password". You will need to send them this temporary password for them to be able to log in. They can change this themselves if they want to.
+</p>
+
+<p>
+	Last thing you need to do is set their Role to "Administrator" (if they're the new Machshev). If they are any other position but S'gan, set them to "Editor". If they are S'gan, set them to "Editor Plus Events" (because the S'gan also needs access to create/modify events).
+</p>
+
+<p>
+	That's it, congratz!
+</p>
+
+<div class="responsive r2">
+	<div class="gallery">
+
+		<a target="_blank" href="http://ramonaza.org/wp-content/uploads/2017/11/AddNew.png">
+			<img src="http://ramonaza.org/wp-content/uploads/2017/11/AddNew.png" alt="Go to Add New User" width="576" height="300">
+		</a>
+
+		<div class="desc">How to get to the "Add New User" page</div>
+
+	</div>
+</div>
+
+<div class="responsive r2">
+	<div class="gallery">
+
+		<a target="_blank" href="http://ramonaza.org/wp-content/uploads/2017/11/AddNew2.png">
+			<img src="http://ramonaza.org/wp-content/uploads/2017/11/AddNew2.png" alt="Add New User page" width="576" height="300">
+		</a>
+
+		<div class="desc">The "Add New User" page</div>
+
+	</div>
+</div>
+
+<div class="clearfix"></div>
+
+
+<br /><br /><br />
