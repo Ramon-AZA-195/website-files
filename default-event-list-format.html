@@ -31,29 +31,12 @@
 			<span class="desc-name">Staff:</span> #_ATT{staff}
 		</div>
 
-		<div class="event-bring">
+		<div class="event-bring name-#_ATT{bring}">
 			<span class="desc-name">Bring:</span> #_ATT{bring}
 		</div>
 
-		<div class="event-planned-by">
+		<div class="event-planned-by name-#_ATT{planner}">
 			<span class="desc-name">Planned by:</span> #_ATT{planner}
-		</div>
-
-		<!-- The following line is necessary for the add-to-calendar date format -->
-		<div style="display: none;">#H#i #@H#@i</div>
-
-		<div class="add-to-calendar">
-			<a href="http://www.google.com/calendar/event?
-			action=TEMPLATE
-			&text=#_EVENTNAME
-			&dates=#_{Ymd}T#H#i00Z/#@_{Ymd}T#@H#@i00Z
-			&ctz=GMT-14:00
-			&details=#_ATT{desc}
-			&location=#_LOCATIONADDRESS
-			&trp=false
-			&sprop=
-			&sprop=name:"
-			target="_blank" rel="nofollow">Add to my calendar</a>
 		</div>
 
 	</div>
