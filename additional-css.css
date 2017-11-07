@@ -1,0 +1,24 @@
+/*   Don't edit this file without reading!!!
+     Make changes on Github first!
+     https://github.com/ramonaza/website-files/blob/master/additional-css.css
+     If you have any questions or concerns, feel free to
+     contact Alumnus Ofek Gila at: ofek@theofekfoundation.org */
+
+h1.ramon-style {
+	font-family: times new roman, times, serif;
+	margin-bottom: 2px;
+}
+
+ul.ramon-style {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+ul.ramon-style li {
+	margin-bottom: 0;
+}
+
+.no-display.ramon-style {
+	display: none;
+}
+
