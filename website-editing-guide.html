@@ -170,6 +170,7 @@
 					<a href="#plugins">Plugins</a>
 
 					<ul>
+						<li><a href="#plugins-overview">Plugins Overview</a></li>
 						<li><a href="#updating-plugins">Updating Plugins</a></li>
 						<li><a href="#making-a-page">Making a Page</a></li>
 					</ul>
@@ -540,7 +541,7 @@
 </p>
 
 <p>
-	In any case, feel free to delete unused plugins, but understand that they don't harm anything.
+	In any case, feel free to delete unused plugins, but understand that they don't harm anything. However, be sure to always deactivate a plugin, check thoroughly if anything breaks, and then delete. Never jump to just deleting, because that could cause a lot of damage.
 </p>
 
 <p>
@@ -559,6 +560,143 @@
 	</div>
 </div>
 
+<div class="clearfix"></div>
+
+
+<h2 id="plugins-overview">Plugins Overview</h2>
+
+<p>
+	Woah, there are a lot of plugins, and you might not be sure what they all do. Before you go off deleting all of them, take a few minutes to be informed to be sure you don't go breaking anything bad.
+</p>
+
+<p>
+	Before we start, don't delete the "Events Manager" plugin, or the "Role Scoper" plugin. Deleting any of these two plugins will cause havoc, and break a lot of infrastructure we have in place. You might not see their effects at first, but if you look at what they do you'll be sure to find it. Also, never delete any activated plugin relating to galleries. These plugins store a lot of our media, meaning that if you remove them, you would potentially lose a lost of that chapter's history.
+</p>
+
+<p>
+	Now let's look at all the useful plugins and what they do:
+</p>
+
+<ul>
+	<li>
+		<b>Better WordPress reCAPTCHA:</b>
+
+		This plugin is being used to prevent a bot from creating a bunch of fake users for the website by adding a captcha to the registration page. This happened to us once, and never happened to us since this extension.
+	</li>
+	<li>
+		<b>Capability Manager Enhanced:</b>
+
+		This plugin was used to create the S'gan's unique "Editor Plus Events" role (which allows the S'gan to edit its own pages and manage events, which is integral for the S'gan). Deleting the plugin won't remove or change the existing role, but would make it harder to modify it in the future.
+	</li>
+	<li>
+		<b>Custom 404 Pro:</b>
+
+		We have a custom 404 page (which you see when going to a page that doesn't exist). That page is possible with this plugin (otherwise it would be a generic 404 page).
+	</li>
+	<li>
+		<b>Easy Timer:</b>
+
+		I'm not entirely sure where this is used. We probably had a countdown timer at some point. This plugin is probably a good plugin to make that happen.
+	</li>
+	<li>
+		<b>Edan is sexy:</b>
+
+		This plugin is renamed from "Pit Login Welcome". It's supposed to make a friendly welcome message for users when they log in.
+	</li>
+	<li>
+		<b>Events Manager:</b>
+
+		Don't remove! This plugin handles all our event functionality that the S'gan constantly uses. This plugin is also super nice in the way that it allows us to create an RSS feed that <a href="https://play.google.com/store/apps/details?id=org.ramonaza.androidzadikapplication" target="_blank">our app</a> can communicate with!
+	</li>
+	<li>
+		<b>Facebook:</b>
+
+		Integrates posts with Facebook. Seems interesting, don't remember anyone ever using it, but hell, you can change that.
+	</li>
+	<li>
+		One of the Galleries:
+
+		We have a few activated galleries, and they're all being used somewhere on the website. They also all suck, so if you find a better one, get the Historian Shotare to start using it. However, <b>never remove them</b> because they also store a bunch of the images&emdash;we would lose a ton of images if you remove any of these plugins.
+	</li>
+	<li>
+		<b>Meta Slider:</b>
+
+		Adds picture slideshows in your posts.
+	</li>
+	<li>
+		<b>Raw HTML:</b>
+
+		Allows some post to contain pure HTML in the Text editor without wordpress messing it up (it would still mess the post up if you try editing it in the visual mode).
+	</li>
+	<li>
+		<b>Role Scoper:</b>
+
+		Allows easy modification of roles, and easy creation of new rules to give to users. This is used for the S'gan's role, as mentioned above. If you notice that the Editor Plus Events role weirdly has access to "activate plugins", that's not a bug. Without this access, S'ganim would not be able to modify or see event locations after making them for some weird reason.
+	</li>
+	<li>
+		<b>RSVP:</b>
+
+		This plugin was once used to try to get an RSVP system working. I don't think we ever got it to work. You could try if you want.
+	</li>
+	<li>
+		<b>TinyMCE Advanced:</b>
+
+		Adds a lot of nice features for the visual editor (in pages and such). This is pretty useful for people who use the visual editor, as some things are very annoying to do without this plugin.
+	</li>
+	<li>
+		<b>WP Simple Pay (Lite Version):</b>
+
+		We tried getting a donate button on the website. I'm not sure if that worked. It might have, I never saw it though.
+	</li>
+</ul>
+
+<div class="responsive r4">
+	<div class="gallery">
+
+		<a target="_blank" href="http://ramonaza.org/wp-content/uploads/2017/11/RegisterCaptcha.png">
+			<img src="http://ramonaza.org/wp-content/uploads/2017/11/RegisterCaptcha.png" alt="The captcha on the register page" width="576" height="300">
+		</a>
+
+		<div class="desc">The captcha on the register page</div>
+
+	</div>
+</div>
+
+<div class="responsive r4">
+	<div class="gallery">
+
+		<a target="_blank" href="http://ramonaza.org/wp-content/uploads/2017/11/404Page.png">
+			<img src="http://ramonaza.org/wp-content/uploads/2017/11/404Page.png" alt="The website 404 page" width="576" height="300">
+		</a>
+
+		<div class="desc">The website 404 page</div>
+
+	</div>
+</div>
+
+<div class="responsive r4">
+	<div class="gallery">
+
+		<a target="_blank" href="http://ramonaza.org/wp-content/uploads/2017/11/GalleryPage.png">
+			<img src="http://ramonaza.org/wp-content/uploads/2017/11/GalleryPage.png" alt="A page with galleries on the website" width="576" height="300">
+		</a>
+
+		<div class="desc">Example of a page with galleries on the website (and slideshows)</div>
+
+	</div>
+</div>
+
+<div class="responsive r4">
+	<div class="gallery">
+
+		<a target="_blank" href="http://ramonaza.org/wp-content/uploads/2017/11/RoleScoperPage.png">
+			<img src="http://ramonaza.org/wp-content/uploads/2017/11/RoleScoperPage.png" alt="The Role Scoper page for the Editor Plus Events" width="576" height="300">
+		</a>
+
+		<div class="desc">How the Role Scoper page looks like for the Editor Plus Events role</div>
+
+	</div>
+</div>
 <div class="clearfix"></div>
 
 
