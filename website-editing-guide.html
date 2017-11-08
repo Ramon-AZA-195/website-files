@@ -128,6 +128,10 @@
 	Welcome to the complete guide to the website. This page will give you an accurate insight into the eyes of a Aleph Machshev, or anyone who needs to modify the website, be it Board Pages, or modifying Events as a S'gan.
 </p>
 
+<p>
+	None of these individual sections are super long, so <b>always read the sections until the very end</b>, not just until you got something working. There might be something you're missing, and it would only take you a few moments to finish the section. If you leave the section only when you see immediate results, you might be in trouble when you try making changes to the same thing again.
+</p>
+
 <br />
 
 <div id="toc-container">
@@ -163,7 +167,7 @@
 
 					<ul>
 						<li><a href="#event-styles">Changing the Style for the Front Page Events</a></li>
-						<li><a href="#making-a-page">Making a Page</a></li>
+						<li><a href="#adding-event-attributes">Adding Event Attributes</a></li>
 					</ul>
 
 				</li>
@@ -716,6 +720,122 @@
 		</a>
 
 		<div class="desc">The place you go to to modify how events look</div>
+
+	</div>
+</div>
+
+<div class="clearfix"></div>
+
+<h2 id="adding-event-attributes">Adding Event Attributes</h2>
+
+<p>
+	Okay, the S'gan wants you to add an event attribute, and you have no clue how to do that. By the way, an event attribute is a thing like: "desc", "food-loc", "bring", "planner", etc. that you see when adding events (see <a href="#adding-an-event">this section</a> for more information). So how is it done?
+</p>
+
+<p>
+	Disclaimer: Please avoid doing this, as it messes with <a href="https://play.google.com/store/apps/details?id=org.ramonaza.androidzadikapplication">the app</a>, requiring it to take into account the new field ;( Only do the following if you really must.
+</p>
+
+<p>
+	It's pretty simple. If you head to the events settings page, in the "General" tab, under "General Options", you will be able to see a text area labeled "Event Attributes". This probably looks like exactly what you want. Add a new field corresponding to what you want to add (following the format of the others).
+</p>
+
+<p>
+	Afterwards, scroll down, and hit "Save Changes (All)". Now, head over to the "Formatting" tab, and open the "Events" section. You should go over the previous section first, or you're be very confused in the next few steps.
+</p>
+
+<p>
+	In the second text block, labeled "Default event list format", follow the link in that top comment (starting with github.com). This will take you to the GitHub page with that code.
+</p>
+
+<p>
+	To add your new attribute, you're probably going to want to copy one of those "div"'s, and modify it to fit your new attribute. For an example, view the third image below.
+</p>
+
+<p>
+	At this point, before committing your changes, you should copy paste your code into the "Default event list format" text box in the Event Manager settings, scroll down, and hit "Save Changes (All)"
+</p>
+
+<p>
+	To test if the code works, read the <a href="#adding-an-event">section explaining how to add an event</a>. If you follow those instructions, you should now see a new attribute show up. Fill in some test value for it. For the "When" section, be sure you put a date in the future, or the event won't show up on the website, and make sure the start time is before the end time.
+</p>
+
+<p>
+	Hitting "Preview" wouldn't help, so just hit "Publish". When that's done, quickly go to the home page of ramon (<a href="ramonaza.org">ramonaza.org</a>) and check if it's working.
+</p>
+
+<p>
+	If it works, great, delete your event as soon as possible (by moving it to trash), or change its visibility so that most people won't be able to see it. Keep reading on though!
+</p>
+
+<p>
+	If you can't see any event, that means you probably didn't set the correct dates in the "When" section of the previous page. If you just can't see the new attribute, be sure you gave it some value in the add event page, and be sure that you copy pasted your new content from GitHub into the "Default event list format header" text area and saved your work.
+</p>
+
+<p>
+	Now that it works, be sure to <b>make your "commit" on the GitHub page, so that your edit will be saved permanently</b>.
+</p>
+
+<p>
+	You're done! Go tell the S'gan that he can start using his new attribute as soon as he wants, and he could even edit pre-existing events and add in the new attribute to them!
+</p>
+
+<div class="responsive r3">
+	<div class="gallery">
+
+		<a target="_blank" href="http://ramonaza.org/wp-content/uploads/2017/11/NewEventAttrField.png">
+			<img src="http://ramonaza.org/wp-content/uploads/2017/11/NewEventAttrField.png" alt="Showing the new event attribute field" width="576" height="300">
+		</a>
+
+		<div class="desc">Highlighted is a new temp attribute</div>
+
+	</div>
+</div>
+
+<div class="responsive r3">
+	<div class="gallery">
+
+		<a target="_blank" href="http://ramonaza.org/wp-content/uploads/2017/11/GithubDefaultEventListFormat.png">
+			<img src="http://ramonaza.org/wp-content/uploads/2017/11/GithubDefaultEventListFormat.png" alt="Default event list format page on GitHub" width="576" height="300">
+		</a>
+
+		<div class="desc">Default event list format page on GitHub</div>
+
+	</div>
+</div>
+
+<div class="responsive r3">
+	<div class="gallery">
+
+		<a target="_blank" href="http://ramonaza.org/wp-content/uploads/2017/11/GithubTempAttrCommit.png">
+			<img src="http://ramonaza.org/wp-content/uploads/2017/11/GithubTempAttrCommit.png" alt="The commit for adding the new attribute" width="576" height="300">
+		</a>
+
+		<div class="desc">The commit for adding the new attribute, with the addition highlighted</div>
+
+	</div>
+</div>
+
+<div class="responsive r2">
+	<div class="gallery">
+
+		<a target="_blank" href="http://ramonaza.org/wp-content/uploads/2017/11/TempAttrInAttrList.png">
+			<img src="http://ramonaza.org/wp-content/uploads/2017/11/TempAttrInAttrList.png" alt="The temp attribute is now in the attribute list" width="576" height="300">
+		</a>
+
+		<div class="desc">The attribute list in the "Add Event" page now contains the new attribute</div>
+
+	</div>
+</div>
+
+<div class="responsive r2">
+	<div class="gallery">
+
+		<a target="_blank" href="http://ramonaza.org/wp-content/uploads/2017/11/TempAttrInFrontPage.png">
+			<img src="http://ramonaza.org/wp-content/uploads/2017/11/TempAttrInFrontPage.png" alt="The temp attribute is now in the front page" width="576" height="300">
+		</a>
+
+		<div class="desc">The post successfully shows the new attribute in the front page (see "Temp Attribute") :D</div>
 
 	</div>
 </div>
