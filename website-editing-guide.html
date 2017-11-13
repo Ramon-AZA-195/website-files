@@ -24,6 +24,17 @@
 		content: url("/wp-content/uploads/2017/11/Selection_055.png");
 	}
 
+	#back-to-top {
+		position: fixed;
+		right: 10%;
+		bottom: -1px;
+		border: 1px solid black;
+		font-size: 18px;
+		padding: 10px 20px 4px 20px;
+		background-color: lightyellow;
+		font-weight: bold;
+	}
+
 	/*
 		Taken from: https://www.tipsandtricks-hq.com/simple-table-of-contents-toc-using-pure-html-and-css-code-9217
 	 */
@@ -130,7 +141,11 @@
 
 </style>
 
-<h1>A complete guide to the website!</h1>
+<div id="back-to-top">
+	<a href="#top">Back to Top</a>
+</div>
+
+<h1 id="top">A complete guide to the website!</h1>
 
 
 <p>
